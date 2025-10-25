@@ -1765,5 +1765,130 @@
     "quality_score": 0.3,
     "polycount": 0,
     "texture_maps": []
+  },
+  "character_b25d29a4": {
+    "model_id": "character_b25d29a4",
+    "name": "Cosmic Forest Exotic",
+    "description": "Placeholder: Fantasy character: Cosmic Forest Exotic - A master of cosmic who embodies the spirit of forest. Known for their unique combination of elemental mastery and thematic focus.",
+    "source": "placeholder",
+    "format": "glb",
+    "file_path": "game_data\\3d_models\\cache\\character_b25d29a4_placeholder.glb",
+    "file_size": 47,
+    "created_at": 1761413215.5751424,
+    "last_accessed": 1761413215.5751426,
+    "license_info": "Placeholder",
+    "attribution": "",
+    "tags": [
+      "placeholder",
+      "character"
+    ],
+    "quality_score": 0.3,
+    "polycount": 0,
+    "texture_maps": []
+  },
+  "character_3bb0a77e": {
+    "model_id": "character_3bb0a77e",
+    "name": "Poison Ocean Warrior",
+    "description": "Placeholder: Fantasy character: Poison Ocean Warrior - A fierce warrior who harnesses the power of poison through ocean. Known for their unique combination of elemental mastery and thematic focus.",
+    "source": "placeholder",
+    "format": "glb",
+    "file_path": "game_data\\3d_models\\cache\\character_3bb0a77e_placeholder.glb",
+    "file_size": 47,
+    "created_at": 1761413227.9549887,
+    "last_accessed": 1761413227.9549887,
+    "license_info": "Placeholder",
+    "attribution": "",
+    "tags": [
+      "placeholder",
+      "character"
+    ],
+    "quality_score": 0.3,
+    "polycount": 0,
+    "texture_maps": []
+  },
+  "character_809babdd": {
+    "model_id": "character_809babdd",
+    "name": "Fire Order Monk",
+    "description": "Placeholder: Fantasy character: Fire Order Monk - A master of fire who embodies the spirit of order. Known for their unique combination of elemental mastery and thematic focus.",
+    "source": "placeholder",
+    "format": "glb",
+    "file_path": "game_data\\3d_models\\cache\\character_809babdd_placeholder.glb",
+    "file_size": 42,
+    "created_at": 1761413239.5607533,
+    "last_accessed": 1761413239.5607538,
+    "license_info": "Placeholder",
+    "attribution": "",
+    "tags": [
+      "placeholder",
+      "character"
+    ],
+    "quality_score": 0.3,
+    "polycount": 0,
+    "texture_maps": []
+  },
+  "character_9699f180": {
+    "model_id": "character_9699f180",
+    "name": "Water Peace Warrior",
+    "description": "Placeholder: Fantasy character: Water Peace Warrior - A fierce warrior who harnesses the power of water through peace. Known for their unique combination of elemental mastery and thematic focus.",
+    "source": "placeholder",
+    "format": "glb",
+    "file_path": "game_data\\3d_models\\cache\\character_9699f180_placeholder.glb",
+    "file_size": 46,
+    "created_at": 1761413251.4086895,
+    "last_accessed": 1761413251.40869,
+    "license_info": "Placeholder",
+    "attribution": "",
+    "tags": [
+      "placeholder",
+      "character"
+    ],
+    "quality_score": 0.3,
+    "polycount": 0,
+    "texture_maps": []
+  },
+  "character_7fab6851": {
+    "model_id": "character_7fab6851",
+    "name": "Wind Vengeance Healer",
+    "description": "Placeholder: Fantasy character: Wind Vengeance Healer - A master of wind who embodies the spirit of vengeance. Known for their unique combination of elemental mastery and thematic focus.",
+    "source": "placeholder",
+    "format": "glb",
+    "file_path": "game_data\\3d_models\\cache\\character_7fab6851_placeholder.glb",
+    "file_size": 48,
+    "created_at": 1761413263.6656804,
+    "last_accessed": 1761413263.665681,
+    "license_info": "Placeholder",
+    "attribution": "",
+    "tags": [
+      "placeholder",
+      "character"
+    ],
+    "quality_score": 0.3,
+    "polycount": 0,
+    "texture_maps": []
+  },
+  "character_40347755": {
+    "model_id": "character_40347755",
+    "name": "Shadow Life Hybrid",
+    "description": "Downloaded from sketchfab: Fantasy character: Shadow Life Hybrid - A master of shadow who embodies the spirit of life. Known for their unique combination of elemental mastery and thematic focus.",
+    "source": "downloaded_online",
+    "format": "glb",
+    "file_path": "game_data\\3d_models\\cache\\character_40347755.glb",
+    "file_size": 1024,
+    "created_at": 1761413266.042988,
+    "last_accessed": 1761413266.0429883,
+    "license_info": {
+      "uid": "322a749bcfa841b29dff1e8a1bb74b0b",
+      "label": "CC Attribution"
+    },
+    "attribution": "",
+    "tags": [
+      "character",
+      "shadow",
+      "life",
+      "hybrid"
+    ],
+    "quality_score": 0.7,
+    "polycount": 0,
+    "texture_maps": []
   }
 }
