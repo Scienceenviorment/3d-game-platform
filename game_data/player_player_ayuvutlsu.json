@@ -1,0 +1,15 @@
+{
+  "name": "Player_player_a",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "level": 1,
+  "experience": 0,
+  "regions_visited": [
+    "ocean_frontier"
+  ],
+  "quests_completed": [],
+  "last_login": 1761402256.9572937
+}

@@ -1,0 +1,18 @@
+{
+    "terrain_seed": 12345,
+    "terrain_scale": 0.02,
+    "max_elevation": 100.0,
+    "dust_plains_boundary": -200.0,
+    "ocean_frontier_boundary": 200.0,
+    "himalayan_peaks_boundary": 200.0,
+    "narmada_forest_boundary": -100.0,
+    "max_objects_per_chunk": 10,
+    "special_object_chance": 0.3,
+    "weather_change_interval": 1800,
+    "monsoon_season_months": [
+        6,
+        7,
+        8,
+        9
+    ]
+}

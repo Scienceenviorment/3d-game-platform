@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of the Horizon - Ancient Bharat</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital@0;1&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #FF6B35 0%, #F7931E 30%, #FFD700 100%);
+            font-family: 'Crimson Text', serif;
+        }
+
+        #gameContainer {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #ui {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 20px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.9);
+            font-family: 'Cinzel', serif;
+        }
+
+        #connectionStatus {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 2px solid #8B4513;
+            color: #FFD700;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            font-family: 'Cinzel', serif;
+        }
+
+        .connected { 
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.8) 0%, rgba(0, 100, 0, 0.9) 100%);
+            border-color: #228B22;
+        }
+        .disconnected { 
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.8) 0%, rgba(160, 82, 45, 0.9) 100%);
+            border-color: #A0522D;
+        }
+        .connecting { 
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.8) 0%, rgba(255, 165, 0, 0.9) 100%);
+            border-color: #FF8C00;
+        }
+
+        #chatContainer {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 320px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.85) 0%, rgba(160, 82, 45, 0.9) 100%);
+            border-radius: 10px;
+            border: 2px solid #8B4513;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #chatMessages {
+            height: 150px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            color: #FFD700;
+            font-size: 13px;
+            font-family: 'Crimson Text', serif;
+            scrollbar-width: thin;
+            scrollbar-color: #8B4513 transparent;
+        }
+
+        #chatMessages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #chatMessages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        #chatMessages::-webkit-scrollbar-thumb {
+            background: #8B4513;
+            border-radius: 3px;
+        }
+
+        #chatInput {
+            width: calc(100% - 16px);
+            padding: 8px;
+            border: 2px solid #8B4513;
+            border-radius: 6px;
+            background: rgba(255, 248, 220, 0.95);
+            font-family: 'Crimson Text', serif;
+            font-size: 14px;
+            color: #8B4513;
+        }
+
+        #chatInput:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.9);
+            font-size: 13px;
+            text-align: right;
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.7) 0%, rgba(160, 82, 45, 0.8) 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #8B4513;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #loadingScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.95) 0%, rgba(160, 82, 45, 0.95) 50%, rgba(205, 133, 63, 0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #FFD700;
+            font-size: 28px;
+            font-family: 'Cinzel', serif;
+            z-index: 2000;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        #loadingScreen::before {
+            content: "🕉️";
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="loadingScreen">
+            <div>Awakening in Ancient Bharat...</div>
+            <div style="font-size: 16px; margin-top: 15px; font-style: italic;">
+                "Where every stone tells a story of forgotten wisdom"
+            </div>
+        </div>
+
+        <div id="ui">
+            <h1 style="font-size: 32px; margin-bottom: 10px; text-shadow: 3px 3px 6px rgba(139, 69, 19, 0.8);">
+                🏛️ Echoes of the Horizon
+            </h1>
+            <div style="font-size: 16px; font-style: italic;">
+                Travelers in Ancient Bharat: <span id="playerCount" style="font-weight: bold; color: #FF8C00;">0</span>
+            </div>
+        </div>
+
+        <div id="connectionStatus" class="connecting">Connecting to Ancient Bharat...</div>
+
+        <div id="chatContainer">
+            <div style="color: #FFD700; font-weight: bold; margin-bottom: 8px; font-family: 'Cinzel', serif; border-bottom: 1px solid #8B4513; padding-bottom: 5px;">
+                📜 Traveler's Chronicle
+            </div>
+            <div id="chatMessages"></div>
+            <input type="text" id="chatInput" placeholder="Share your thoughts with fellow travelers..." style="display:none;">
+        </div>
+
+        <div id="controls">
+            <strong style="color: #FF8C00;">🎮 Ancient Controls:</strong><br>
+            WASD - Traverse the lands<br>
+            Mouse - Observe surroundings<br>
+            Enter - Speak with others<br>
+            Escape - Release from view<br><br>
+            <em>May wisdom guide your path...</em>
+        </div>
+    </div>
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <script src="js/game.js"></script>
+</body>
+</html>
