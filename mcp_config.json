@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "3d-game-platform": {
+      "command": "python",
+      "args": ["mcp_server.py"],
+      "env": {
+        "PYTHONPATH": "."
+      },
+      "cwd": "c:\\Users\\Scien\\python.vscode\\3d-game-platform"
+    }
+  }
+}

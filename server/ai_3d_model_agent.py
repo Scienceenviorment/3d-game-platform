@@ -86,21 +86,30 @@ class AI3DModelAgent:
     """Intelligent agent for 3D model generation and management"""
     
     def __init__(self, models_directory: str = "https://raw.githubusercontent.com/Scien12/3d-game-platform/main/game_data/3d_models"):
+        # Check for local mode (for MCP server or testing)
+        if os.environ.get('LOCAL_MODE') == '1':
+            models_directory = "game_data/3d_models"
+        
         self.models_dir = Path(models_directory)
-        self.models_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Only create directories if using local paths
+        if not str(self.models_dir).startswith('http'):
+            self.models_dir.mkdir(parents=True, exist_ok=True)
         
         # Create subdirectories for different content types
         self.subdirs = {
             "weapons": self.models_dir / "weapons",
-            "beasts": self.models_dir / "beasts", 
+            "beasts": self.models_dir / "beasts",
             "divine_entities": self.models_dir / "divine_entities",
             "environments": self.models_dir / "environments",
             "props": self.models_dir / "props",
             "cache": self.models_dir / "cache"
         }
         
-        for subdir in self.subdirs.values():
-            subdir.mkdir(exist_ok=True)
+        # Only create subdirectories if using local paths
+        if not str(self.models_dir).startswith('http'):
+            for subdir in self.subdirs.values():
+                subdir.mkdir(exist_ok=True)
         
         # Model metadata cache
         self.metadata_file = self.models_dir / "models_metadata.json"
