@@ -17,7 +17,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'server'))
 def analyze_generated_models():
     """Analyze all generated 3D models and show statistics"""
     
-    models_dir = Path("game_data/3d_models")
+    models_dir = Path("https://raw.githubusercontent.com/Scien12/3d-game-platform/main/game_data/3d_models")
     metadata_file = models_dir / "models_metadata.json"
     
     print("🎨 3D Model Generation Summary")

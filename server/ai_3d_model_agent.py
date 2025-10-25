@@ -85,7 +85,7 @@ class ModelRequest:
 class AI3DModelAgent:
     """Intelligent agent for 3D model generation and management"""
     
-    def __init__(self, models_directory: str = "game_data/3d_models"):
+    def __init__(self, models_directory: str = "https://raw.githubusercontent.com/Scien12/3d-game-platform/main/game_data/3d_models"):
         self.models_dir = Path(models_directory)
         self.models_dir.mkdir(parents=True, exist_ok=True)
         
@@ -183,6 +183,23 @@ class AI3DModelAgent:
         print(f"💾 Cached models: {len(self.model_cache)}")
         self._log_available_services()
     
+    
+    def _get_github_storage_url(self, local_path: str) -> str:
+        """Convert local path to GitHub storage URL"""
+        github_repo = "Scien12/3d-game-platform"
+        github_lfs_url = f"https://media.githubusercontent.com/media/{github_repo}/main"
+        
+        # Normalize path
+        normalized_path = local_path.replace("\\", "/")
+        if normalized_path.startswith("./"):
+            normalized_path = normalized_path[2:]
+        
+        return f"{github_lfs_url}/{normalized_path}"
+    
+    def _use_github_storage(self) -> bool:
+        """Check if GitHub storage should be used"""
+        return True  # Always use GitHub storage in production
+
     def _check_blender_available(self) -> bool:
         """Check if Blender is available for local 3D generation"""
         try:

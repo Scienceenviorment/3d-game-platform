@@ -58,20 +58,20 @@ class GitHubStorageConfig:
                 patterns = [
                     # Models directory references
                     (r'"game_data[/\\]3d_models[/\\]([^"]*)"', 
-                     lambda m: f'"{self.convert_local_to_github_url(f"game_data/3d_models/{m.group(1)}")}"'),
+                     lambda m: f'"{self.convert_local_to_github_url(f"https://raw.githubusercontent.com/Scien12/3d-game-platform/main/game_data/3d_models/{m.group(1)}")}"'),
                     
                     (r"'game_data[/\\]3d_models[/\\]([^']*)'", 
-                     lambda m: f"'{self.convert_local_to_github_url(f'game_data/3d_models/{m.group(1)}')}'"),
+                     lambda m: f"'{self.convert_local_to_github_url(f'https://raw.githubusercontent.com/Scien12/3d-game-platform/main/game_data/3d_models/{m.group(1)}')}'"),
                     
                     # General game_data references
                     (r'"game_data[/\\]([^"]*)"', 
-                     lambda m: f'"{self.convert_local_to_github_url(f"game_data/{m.group(1)}")}"'),
+                     lambda m: f'"{self.convert_local_to_github_url(f"https://raw.githubusercontent.com/Scien12/3d-game-platform/main/game_data/{m.group(1)}")}"'),
                     
                     (r"'game_data[/\\]([^']*)'", 
-                     lambda m: f"'{self.convert_local_to_github_url(f'game_data/{m.group(1)}')}'"),
+                     lambda m: f"'{self.convert_local_to_github_url(f'https://raw.githubusercontent.com/Scien12/3d-game-platform/main/game_data/{m.group(1)}')}'"),
                     
                     # Models directory variable assignments
-                    (r'models_directory\s*=\s*"game_data/3d_models"',
+                    (r'models_directory\s*=\s*"https://raw.githubusercontent.com/Scien12/3d-game-platform/main/game_data/3d_models"',
                      f'models_directory = "{self.github_lfs_url}/game_data/3d_models"'),
                 ]
                 

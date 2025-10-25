@@ -1,0 +1,20 @@
+{
+  "github_storage": {
+    "repository": "Scien12/3d-game-platform",
+    "base_url": "https://raw.githubusercontent.com/Scien12/3d-game-platform/main",
+    "lfs_url": "https://media.githubusercontent.com/media/Scien12/3d-game-platform/main",
+    "enabled": true
+  },
+  "storage_mapping": {
+    "3d_models": "https://media.githubusercontent.com/media/Scien12/3d-game-platform/main/game_data/3d_models",
+    "audio": "https://media.githubusercontent.com/media/Scien12/3d-game-platform/main/game_data/audio",
+    "images": "https://raw.githubusercontent.com/Scien12/3d-game-platform/main/game_data/images",
+    "configs": "https://raw.githubusercontent.com/Scien12/3d-game-platform/main/config",
+    "assets": "https://media.githubusercontent.com/media/Scien12/3d-game-platform/main/game_data"
+  },
+  "cache_policy": {
+    "enable_local_cache": true,
+    "cache_duration": 3600,
+    "max_cache_size": "1GB"
+  }
+}
