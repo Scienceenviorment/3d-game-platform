@@ -6,7 +6,12 @@
     "scripts": {
         "dev": "python run_dev.py",
         "server": "cd server && python main.py",
-        "client": "cd client && python -m http.server 8080"
+        "client": "cd client && python -m http.server 8080",
+        "test-node": "node test_node.js",
+        "test-nim": "nim js test_nim.nim && node test_nim.js",
+        "mcp-server": "python simple_mcp_server.py",
+        "install-deps": "npm install && pip install -r requirements.txt",
+        "build-nim": "nim js --outDir:build src/main.nim"
     },
     "repository": {
         "type": "git",
